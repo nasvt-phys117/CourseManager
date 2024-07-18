@@ -13,7 +13,5 @@ public class Teacher
     [StringLength(30)]
     public string LastName { get; set; }
 
-    
-    public int? CourseId { get; set; }
-    public Course Course { get; set; }
+    public ICollection<Course> Course { get; set; }
 }

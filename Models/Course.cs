@@ -18,7 +18,9 @@ public class Course
     [StringLength(30)]
     public string Subject { get; set; }
 
-    public Teacher Instructor { get; set; }
+    [Required]
+    public Teacher Teacher { get; set; }
 
-    public ICollection<Student> Students { get; }
+    [Required]
+    public ICollection<Student> Students { get; set; }
 }
