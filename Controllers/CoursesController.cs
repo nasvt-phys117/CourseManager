@@ -22,7 +22,10 @@ public class CoursesController : Controller
     // GET: Courses
     public async Task<IActionResult> Index()
     {
-        return View(await _context.Course.ToListAsync());
+        var courses = _context.Course.Include(c => c.Teacher).AsNoTracking();
+
+
+        return View(await courses.ToListAsync());
     }
 
     // GET: Courses/Details/5
