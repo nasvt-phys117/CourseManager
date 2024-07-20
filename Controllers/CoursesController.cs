@@ -23,8 +23,6 @@ public class CoursesController : Controller
     public async Task<IActionResult> Index()
     {
         var courses = _context.Course.Include(c => c.Teacher).AsNoTracking();
-
-
         return View(await courses.ToListAsync());
     }
 

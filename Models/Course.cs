@@ -12,7 +12,7 @@ public class Course
 
     [StringLength(300, ErrorMessage = "Description can't be more than 300 characters.")]
     [Display(Name = "Course Description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     [Required]
     [StringLength(30)]
@@ -22,5 +22,5 @@ public class Course
     public Teacher Teacher { get; set; }
 
     [Required]
-    public ICollection<Student> Students { get; set; }
+    public ICollection<Student>? Students { get; set; }
 }

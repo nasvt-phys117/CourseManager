@@ -8,18 +8,18 @@ public class Teacher
     public int Id { get; set; }
     [Required]
     [StringLength(20)]
-    public string FirstName { get; set; } = String.Empty;
+    public string FirstName { get; set; }
 
     [StringLength(30)]
-    public string LastName { get; set; } = String.Empty;
+    public string LastName { get; set; }
 
     [StringLength(30)]
-    public string EducationalTitle { get; set; } = String.Empty;
+    public string? EducationalTitle { get; set; }
 
     [StringLength(50)]
-    public string EmailAddress { get; set; } = String.Empty;
+    public string? EmailAddress { get; set; }
 
-    public ICollection<Course> Course { get; set; }
+    public ICollection<Course>? Course { get; set; }
 
     [NotMapped]
     public string FullName { get {  return FirstName[0] + ". " + LastName; } }
