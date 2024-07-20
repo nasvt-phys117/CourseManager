@@ -34,6 +34,8 @@ namespace CourseManager.Controllers
             }
 
             var teacher = await _context.Teacher
+                .Include(x => x.Course)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (teacher == null)
             {
